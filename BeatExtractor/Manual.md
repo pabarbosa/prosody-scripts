@@ -1,8 +1,6 @@
 ## Manual of Praat Script
 # Beat Extractor (and BeatExtractorSeveral)
-#### Developer: Plinio A. Barbosa
-#### Version 2003
-
+#### by Plinio A. Barbosa (2003)
 
 This manual gives a general overview of how the Beat Extractor Praat script works. The Beat ExtractorSeveral scripts does the same for several audio files with a particular extension (e.g., WAV).
 
@@ -13,6 +11,7 @@ This Praat script implements Fred Cummins' Beat Extractor (Cummins, F. and Port,
 The present script generates a TextGrid file containing boundaries close to the vowel onsets (note that this is not the same thing as finding p-centres, which is an unsolved problem). Model parameters and default values were optimised using Brazilian Portuguese utterances. In the following a brief overview of what the programme does is presented. This may help in modifying the parameters for other languages or datasets (I also give Fred's default values, which were used with Irish English, as well as Scott's default values, which were used with British English).
 
 **Input:** Any audio file with extension compatible with Praat.
+
 **Output:** A TextGrid file with vowel onset to vowel onset intervals.
 
 When running the script, three buttons allow: (1) to choose between a male and a female speaker (this option automatically chooses appropriate cut-off frequencies for the filter in step 1 below), (2) to choose between a Butterworth or a Hanning filter (step 1), and (3) to choose a technique for detecting boundaries, as explained in steps 4a and 4b below.
