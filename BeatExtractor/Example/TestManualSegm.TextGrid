@@ -1,0 +1,210 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 15.75187447872053 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "vv" 
+        xmin = 0 
+        xmax = 15.75187447872053 
+        intervals: size = 49 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.4903156938763189 
+            text = "" 
+        intervals [2]:
+            xmin = 0.4903156938763189 
+            xmax = 1.0420686482222052 
+            text = "i" 
+        intervals [3]:
+            xmin = 1.0420686482222052 
+            xmax = 1.333370277373099 
+            text = "if" 
+        intervals [4]:
+            xmin = 1.333370277373099 
+            xmax = 1.4795633363546656 
+            text = "al" 
+        intervals [5]:
+            xmin = 1.4795633363546656 
+            xmax = 1.607885815243101 
+            text = "Ip" 
+        intervals [6]:
+            xmin = 1.607885815243101 
+            xmax = 1.796273267483123 
+            text = "azh" 
+        intervals [7]:
+            xmin = 1.796273267483123 
+            xmax = 1.8776059519328285 
+            text = "eh" 
+        intervals [8]:
+            xmin = 1.8776059519328285 
+            xmax = 2.0933418333892817 
+            text = "iUz" 
+        intervals [9]:
+            xmin = 2.0933418333892817 
+            xmax = 2.2592684428391365 
+            text = "ak" 
+        intervals [10]:
+            xmin = 2.2592684428391365 
+            xmax = 2.4228456489845556 
+            text = "eln" 
+        intervals [11]:
+            xmin = 2.4228456489845556 
+            xmax = 2.540717655149429 
+            text = "ehg" 
+        intervals [12]:
+            xmin = 2.540717655149429 
+            xmax = 2.7676302955085887 
+            text = "ohsk" 
+        intervals [13]:
+            xmin = 2.7676302955085887 
+            xmax = 2.880955624382871 
+            text = "om" 
+        intervals [14]:
+            xmin = 2.880955624382871 
+            xmax = 3.017682482923142 
+            text = "aNd" 
+        intervals [15]:
+            xmin = 3.017682482923142 
+            xmax = 3.17670238893664 
+            text = "eIl" 
+        intervals [16]:
+            xmin = 3.17670238893664 
+            xmax = 4.4227161954387455 
+            text = "a" 
+        intervals [17]:
+            xmin = 4.4227161954387455 
+            xmax = 4.576724514110317 
+            text = "azh" 
+        intervals [18]:
+            xmin = 4.576724514110317 
+            xmax = 4.738487597827209 
+            text = "eNt" 
+        intervals [19]:
+            xmin = 4.738487597827209 
+            xmax = 4.929105718098931 
+            text = "Ip" 
+        intervals [20]:
+            xmin = 4.929105718098931 
+            xmax = 5.117270999909415 
+            text = "ag" 
+        intervals [21]:
+            xmin = 5.117270999909415 
+            xmax = 5.279997594367622 
+            text = "a" 
+        intervals [22]:
+            xmin = 5.279997594367622 
+            xmax = 5.561544208552114 
+            text = "ehl" 
+        intervals [23]:
+            xmin = 5.561544208552114 
+            xmax = 6.226113337224724 
+            text = "A" 
+        intervals [24]:
+            xmin = 6.226113337224724 
+            xmax = 6.479266464762027 
+            text = "it" 
+        intervals [25]:
+            xmin = 6.479266464762027 
+            xmax = 7.632294503847 
+            text = "aU" 
+        intervals [26]:
+            xmin = 7.632294503847 
+            xmax = 8.422335575863663 
+            text = "eh" 
+        intervals [27]:
+            xmin = 8.422335575863663 
+            xmax = 8.568556120740546 
+            text = "ud" 
+        intervals [28]:
+            xmin = 8.568556120740546 
+            xmax = 8.65487458010626 
+            text = "inh" 
+        intervals [29]:
+            xmin = 8.65487458010626 
+            xmax = 8.742048260835311 
+            text = "eR" 
+        intervals [30]:
+            xmin = 8.742048260835311 
+            xmax = 8.890824792425015 
+            text = "Ud" 
+        intervals [31]:
+            xmin = 8.890824792425015 
+            xmax = 9.091634660031794 
+            text = "ehl" 
+        intervals [32]:
+            xmin = 9.091634660031794 
+            xmax = 9.179429969507574 
+            text = "A" 
+        intervals [33]:
+            xmin = 9.179429969507574 
+            xmax = 9.56845104137961 
+            text = "izh" 
+        intervals [34]:
+            xmin = 9.56845104137961 
+            xmax = 9.884807720176646 
+            text = "af" 
+        intervals [35]:
+            xmin = 9.884807720176646 
+            xmax = 10.069012204128121 
+            text = "al" 
+        intervals [36]:
+            xmin = 10.069012204128121 
+            xmax = 10.253280070204205 
+            text = "ozh" 
+        intervals [37]:
+            xmin = 10.253280070204205 
+            xmax = 10.366055318825609 
+            text = "eh" 
+        intervals [38]:
+            xmin = 10.366055318825609 
+            xmax = 10.532538030652695 
+            text = "iUz" 
+        intervals [39]:
+            xmin = 10.532538030652695 
+            xmax = 10.657427335411803 
+            text = "oh" 
+        intervals [40]:
+            xmin = 10.657427335411803 
+            xmax = 11.112867298792885 
+            text = "ak" 
+        intervals [41]:
+            xmin = 11.112867298792885 
+            xmax = 11.326200056056798 
+            text = "oIz" 
+        intervals [42]:
+            xmin = 11.326200056056798 
+            xmax = 12.338519056962475 
+            text = "ik" 
+        intervals [43]:
+            xmin = 12.338519056962475 
+            xmax = 12.400993406929622 
+            text = "oN" 
+        intervals [44]:
+            xmin = 12.400993406929622 
+            xmax = 12.605275535056826 
+            text = "aNt" 
+        intervals [45]:
+            xmin = 12.605275535056826 
+            xmax = 12.807964927379949 
+            text = "ehs" 
+        intervals [46]:
+            xmin = 12.807964927379949 
+            xmax = 12.968085898176248 
+            text = "ehd" 
+        intervals [47]:
+            xmin = 12.968085898176248 
+            xmax = 13.205275535056849 
+            text = "eNs" 
+        intervals [48]:
+            xmin = 13.205275535056849 
+            xmax = 14.251966862016111 
+            text = "A" 
+        intervals [49]:
+            xmin = 14.251966862016111 
+            xmax = 15.75187447872053 
+            text = "" 

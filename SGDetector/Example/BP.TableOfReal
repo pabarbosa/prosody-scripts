@@ -1,0 +1,79 @@
+File type = "ooTextFile"
+Object class = "TableOfReal"
+
+numberOfColumns = 2 
+columnLabels []: 
+"mean"	"sd"	
+numberOfRows = 72
+row [1]: "i"	87	19
+row [2]: "e"	110	19
+row [3]: "eh"	113	17
+row [4]: "a"	132	45
+row [5]: "oh"	119	18
+row [6]: "o"	111	20
+row [7]: "u"	103	14
+row [8]: "iN"	128	16
+row [9]: "eN"	134	15
+row [10]: "aN"	134	15
+row [11]: "oN"	137	18
+row [12]: "uN"	128	10
+row [13]: "I"	55	14
+row [14]: "E"	51	13
+row [15]: "A"	59	15
+row [16]: "O"	51	14
+row [17]: "U"	47	15
+row [18]: "IN"	89	25
+row [19]: "EN"	82	26
+row [20]: "AN"	93	34
+row [21]: "ON"	88	19
+row [22]: "UN"	98	16
+row [23]: "eI"	126	13
+row [24]: "ehI"	134	13
+row [25]: "aI"	135	12
+row [26]: "ohI"	133	12
+row [27]: "oI"	131	14
+row [28]: "uI"	122	13
+row [29]: "aNI"	143	18
+row [30]: "oNI"	120	10
+row [31]: "iU"	145	23
+row [32]: "eU"	134	17
+row [33]: "ehU"	143	15
+row [34]: "aU"	145	15
+row [35]: "ohU"	138	19
+row [36]: "oU"	133	14
+row [37]: "aNU"	140	13
+row [38]: "IU"	61	16
+row [39]: "IO"	61	16
+row [40]: "UU"	63	18
+row [41]: "UO"	63	18
+row [42]: "II"	49	14
+row [43]: "IE"	49	14
+row [44]: "UI"	106	14
+row [45]: "UE"	106	14
+row [46]: "EU"	106	14
+row [47]: "IA"	80	17
+row [48]: "UA"	70	16
+row [49]: "ANU"	96	26
+row [50]: "p"	80	16
+row [51]: "t"	81	20
+row [52]: "k"	80	22
+row [53]: "b"	59	18
+row [54]: "d"	58	20
+row [55]: "g"	52	20
+row [56]: "f"	89	28
+row [57]: "s"	96	24
+row [58]: "sh"	104	19
+row [59]: "v"	57	19
+row [60]: "z"	64	25
+row [61]: "zh"	65	17
+row [62]: "S"	74	31
+row [63]: "m"	61	13
+row [64]: "n"	51	17
+row [65]: "nh"	84	27
+row [66]: "r"	78	24
+row [67]: "R"	30	10
+row [68]: "l"	47	13
+row [69]: "lh"	72	24
+row [70]: "uU"	145	23
+row [71]: "Io"	131	14
+row [72]: "uNI"	120	10

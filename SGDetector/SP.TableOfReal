@@ -1,0 +1,38 @@
+File type = "ooTextFile"
+Object class = "TableOfReal"
+
+numberOfColumns = 2 
+columnLabels []: 
+"mean"	"sd"	
+numberOfRows = 31 
+row [1]: "b"	30	14
+row [2]: "B"	40	13
+row [3]: "d"	34	17
+row [4]: "D"	37	14
+row [5]: "e"	58	25
+row [6]: "f"	95	23
+row [7]: "g"	36	11
+row [8]: "G"	45	17
+row [9]: "i"	65	23
+row [10]: "j"	54	26
+row [11]: "nj"	80	24
+row [12]: "jj"	69	25
+row [13]: "k"	72	20
+row [14]: "l"	47	17
+row [15]: "lh"	66	20
+row [16]: "m"	62	15
+row [17]: "n"	56	22
+row [18]: "nh"	54	16
+row [19]: "o"	65	27
+row [20]: "p"	70	22
+row [21]: "r"	56	22
+row [22]: "rr"	35	17
+row [23]: "s"	81	29
+row [24]: "t"	67	20
+row [25]: "th"	96	26
+row [26]: "ch"	114	31
+row [27]: "u"	59	21
+row [28]: "w"	44	18
+row [29]: "x"	98	23
+row [30]: "z"	57	23
+row [30]: "a"	72	28

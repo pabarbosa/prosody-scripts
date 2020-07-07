@@ -1,0 +1,54 @@
+File type = "ooTextFile"
+Object class = "TableOfReal"
+
+numberOfColumns = 2
+columnLabels []: 
+"mean"	"sd"	
+numberOfRows = 47
+row [1]: "^"	131	42
+row [2]: "eR"	281	84
+row [3]: "ae"	197	65
+row [4]: "@"	153	79
+row [5]: "e"	135	76
+row [6]: "ER"	250	75
+row [7]: "i"	123	47
+row [8]: "eI"	247	82
+row [9]: "o"	197	54
+row [10]: "oU"	228	84
+row [11]: "u"	142	41
+row [12]: "r"	70	27
+row [13]: "S"	188	38
+row [14]: "tS"	228	76
+row [15]: "th"	172	51
+row [16]: "Z"	128	26
+row [17]: "a"	197	65
+row [18]: "a:"	237	78
+row [19]: "aI"	247	74
+row [20]: "aU"	267	77
+row [21]: "b"	86	26
+row [22]: "d"	105	31
+row [23]: "dZ"	178	69
+row [24]: "f"	148	38
+row [25]: "g"	95	28
+row [26]: "h"	74	17
+row [27]: "i:"	202	72
+row [28]: "j"	86	34
+row [29]: "k"	145	48
+row [30]: "l"	97	39
+row [31]: "m"	97	36
+row [32]: "n"	96	32
+row [33]: "o:"	260	71
+row [34]: "p"	142	53
+row [35]: "s"	163	42
+row [36]: "t"	151	50
+row [37]: "u:"	248	83
+row [38]: "v"	123	46
+row [39]: "TH"	53	33
+row [40]: "w"	79	26
+row [41]: "z"	150	33
+row [42]: "oI"	237	82
+row [43]: "uR"	198	86
+row [44]: "iR"	260	71
+row [45]: "N"	105	27
+row [46]: "oR"	237	82
+row [47]: "aR"	237	82

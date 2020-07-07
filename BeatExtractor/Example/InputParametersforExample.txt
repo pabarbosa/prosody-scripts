@@ -1,0 +1,8 @@
+Input Parameters
+
+File: Test.wav
+
+Other parameters as in default, but:
+
+cut off frequency (Hz): 800 and 2300 Hz
+Threshold2: 0.1
