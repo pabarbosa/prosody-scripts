@@ -1,7 +1,8 @@
-# Manual of Praat Script
+## Manual of Praat Script
 # Beat Extractor (and BeatExtractorSeveral)
-## Version 2003
-## By Plinio A. Barbosa
+#### Developer: Plinio A. Barbosa
+#### Version 2003
+
 
 This manual gives a general overview of how the Beat Extractor Praat script works. The Beat ExtractorSeveral scripts does the same for several audio files with a particular extension (e.g., WAV).
 
@@ -21,8 +22,8 @@ Steps (BeatExtractorFlux.doc gives the same information as a flow graph):
 1. The filtered signal is rectified.
 1. The rectified signal is low-pass filtered (variable Smoothing_cut_freq in the Praat form). A 20 Hz cut-off frequency is used as default (for technique 4a. 40 Hz is chosen instead, automatically, in technique 4b) , since in Brazilian Portuguese, fast intensity changes are produced with tap in intervocalic position, when both vowels are reduced (e.g., "xícara", cup). (Fred used 10 Hz, instead. Scott used 25 Hz).
 1. This Praat script introduces another possible technique (compared to Fred's) for identifying specific points associated with local rises in amplitude, by first identifying those points where the rate of increase of the amplitude envelope is maximal:
-  1. A beat is associated with a local maximum of the first derivative of the amplitude envelope (obtained after step 3), provided this maximum is higher than threshold 2 (expressed as a proportion of the maximum signal derivative amplitude. Default = 0.12) and the absolute value of the amplitude peak is higher than threshold 1 (default = 0.15) of the maximum signal amplitude (this constraint allows the algorithm to ignore steep onsets associated with very small rises in amplitude).
-  1. Cummins' original technique is also available with the following technique: A beat is associated with a local rise in the amplitude envelope of the signal obtained after step 3. I suggest using the point at which threshold 1 (default = 0.15) of the rise is complete.  Cummins used the 0.5 point.
+    1. A beat is associated with a local maximum of the first derivative of the amplitude envelope (obtained after step 3), provided this maximum is higher than threshold 2 (expressed as a proportion of the maximum signal derivative amplitude. Default = 0.12) and the absolute value of the amplitude peak is higher than threshold 1 (default = 0.15) of the maximum signal amplitude (this constraint allows the algorithm to ignore steep onsets associated with very small rises in amplitude).
+    1. Cummins' original technique is also available with the following technique: A beat is associated with a local rise in the amplitude envelope of the signal obtained after step 3. I suggest using the point at which threshold 1 (default = 0.15) of the rise is complete.  Cummins used the 0.5 point.
 1. A TextGrid is generated with the above boundaries.
 
 Thanks to Fred Cummins for the original beat extractor.
