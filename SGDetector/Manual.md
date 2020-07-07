@@ -1,12 +1,11 @@
-# SGDetector Script Readme file (this is a guide for the use of the SGDetector script)
-# By Plinio A. Barbosa (pabarbosa.unicampbr@gmail.com)
-# Versions May 27th, 2004. New version Jul 2016
-#
-# It cannot run without the corresponding TableOfReal file for the specific language. TableOfReal files for BP,
-# EP, German (G), French (F), American English (AmE) and Spanish (SP) are given
+## Manual of the Praat script
+# SGDetector
+### by Plinio A. Barbosa
+### Versions: May 27th, 2004. New version Jul 2016
 
+**Warning:** It cannot run without the corresponding TableOfReal file for the specific language. TableOfReal files for BP, EP, German (G), French (F), American English (AmE) and Spanish (SP) are given
 
-This Praat script generates as outputs:
+### This Praat script generates as outputs:
 
 1. A TXT file with 5 columns: VV labels, raw duration in ms, duration z-scores, smoothed duration z-scores and boundary identification (0 = no SG boundary and 1  = stress group boundary).
 2. A TXT file with 2 columns: duration of stress groups (SG) and number of VV within each SG.
