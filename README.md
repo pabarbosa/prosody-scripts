@@ -6,13 +6,13 @@ Inside each folder there are subfolders entitled **Documents** and **Example**.
 The first contains a Manual or a ReadMe file, whereas the latter contains examples of input and output files
 that help understand whats is said in the manual or readme file and how to annotate the audio files, when applicable.
 
+1. *AcousticParametersforVowelsExtractor*
+The script generates two files, one containing F1 and F2 in Hertz, and another one with F1 and F2 normalised by the Lobanov method (the other parameters are the same). Additionally, the script computes vowel duration and spectral emphasis. It requires an audio file and a TextGrid whose annotation is explained in the Test.TextGrid example file and hints on annotation are given in the manual.
+
 1. *Beat Extractor*
 This scripts generates a TextGrid file containing intervals delimited by vowel onsets. 
 It only requires an audio file as input and works for any language.
 Change in the inpout parameters is, though, necessary for a better performance.
-
-1. *AcousticParametersforVowelsExtractor*
-The script generates two files, one containing F1 and F2 in Hertz, and another one with F1 and F2 normalised by the Lobanov method (the other parameters are the same). Additionally, the script computes vowel duration and spectral emphasis. It requires an audio file and a TextGrid whose annotation is explained in the Test.TextGrid example file and hints on annotation are given in the manual.
 
 1. *ForensicVowelTracking*
 This script generates a set of data values for vowels for Forensic analysis: F1, F2, F3, Rate of F2 transition, Baseline, F0 median and Espectral Emphasis. 
