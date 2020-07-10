@@ -1,9 +1,9 @@
 ## Manual of the Praat Script
-# ExtractingAcousticParametersforVowels
+# AcousticParametersforVowelsExtractor
 ### by Plinio A. Barbosa (Nov, 2015)
 ### Version 1.3
 
-This manual gives a general overview of how the ExtractingAcousticParametersforVowels Praat script works. Any questions can be asked directly to this email: pabarbosa.unicampbr@gmail.com.
+This manual gives a general overview of how the AcousticParametersforVowelsExtractor Praat script works. Any questions can be asked directly to this email: pabarbosa.unicampbr@gmail.com.
 
 ## PART A – HOW THE SCRIPTS WORKS
 
