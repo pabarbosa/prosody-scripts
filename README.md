@@ -22,11 +22,13 @@ It requires an audio file and a TextGrid whose annotation is explained in the Te
 This script generates a large set of acoustic-prosodic parameters computed from labelled intervals and points in a TextGrid file.
 It requires an audio file and a TextGrid whose annotation is explained in the Example.TextGrid file. Only one tier is mandatory, the chunk tier. Additional tiers can be used to a complete set of rhythmic, voice quality and melodic parameters. If only if VV duration normalization is chosen to be computed by the user, a language-specific TableOfReal file will be necessary because duration normalization depends on reference duration mean and standard deviation of the language. This table is given for French, German, Spanish, American English, Brazilian and European Portuguese. Symbols for syllable-size (VV unit) annotation in BP are given in a Table of correspondance with IPA. Symbols allowed for the other languages can be seen opening the TableOfReal file in a text editor.
 
+1. *SGDetector*
+This script normalizes syllable-size duration using two techiques applied consecutively: z−scores are computed by using the duration mean and standard deviation found in the laanguage-specific TableOfReal file and them smoothed with a 5-point moving average techique. This table is given for French, German, Spanish, American English, Brazilian and European Portuguese. Symbols for syllable-size (VV unit) annotation in BP are given in a Table of correspondance with IPA. Symbols allowed for the other languages can be seen opening the TableOfReal file in a text editor. The local maxima of smoothed z-scores are chosen as salient VVs, defining the end of corresponding stress groups. 
+It only requires a TextGrid file, although the corresponding audiofile is necessary to checj the results.
+
 1. *Salience Detector*
 This script combines two scripts, BeatExtractor and SGdetector, to detect salient VV intervals in a sound file. 
 It only requires an audio file as input and works for any language.
 Change in the inpout parameters is, though, necessary for a better performance.
 
-1. *SGDetector*
-This script normalizes syllable-size duration using two techiques applied consecutively: z−scores are computed by using the duration mean and standard deviation found in the laanguage-specific TableOfReal file and them smoothed with a 5-point moving average techique. This table is given for French, German, Spanish, American English, Brazilian and European Portuguese. Symbols for syllable-size (VV unit) annotation in BP are given in a Table of correspondance with IPA. Symbols allowed for the other languages can be seen opening the TableOfReal file in a text editor. The local maxima of smoothed z-scores are chosen as salient VVs, defining the end of corresponding stress groups. 
-It only requires a TextGrid file, although the corresponding audiofile is necessary to checj the results.
+
