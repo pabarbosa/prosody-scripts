@@ -63,30 +63,32 @@ For each parameter you may keep the value as it is informed (default) or writing
         v. Speech rate in VV units per second assigned to the variable srate in the output file IF there is a VV tier,
         w. Articulation rate in VV units per second assigned to the variable artrate in the output file IF there is a VV tier and a Sil Tier.
 
-    6. The parameters computed by the script from the tones tier are (variable name in italics): 
+1. The parameters computed by the script from the tones tier are (variable name in italics): 
         a. Tone types along the tier, as labelled by the user, assigned to the variable tonetype in the tones output file,
         b. Time where the tone is in the audio file in seconds, assigned to the variable time in the tones output file,
         c. Relative alignment from to VV unit onset divided by the VV duration, assigned to the variable alignVV in the tones output file,
         d. Mean F0 of the VV unit where the tone is, assigned to the variable meanf0VV in the tones output file,
 
 
-    7. The parameters computed by the script from the sil tier are (variable name in italics): 
+1. The parameters computed by the script from the sil tier are (variable name in italics): 
         a. Pause type in the intervals, as labelled by the user, assigned to the variable type in the sil output file,
         b. IPI, the duration from the onset of the previous pause to the onset of the current pause interval, assigned to the variable IPI in the sil output file,
         c. Pause duration, the duration of the pause interval, assigned to the variable durSIL in the sil output file.
 
-    8. The parameters computed by the script from the vowel tier are (variable name in italics): 
+1. The parameters computed by the script from the vowel tier are (variable name in italics): 
         a. Vowel segment, the label of the vowel of each interval, assigned to the variable vowel in the vowel output file,
         b. H1- H2, the value in dB of the difference between harmonics H1 and H2 in the central part of the vowel interval, assigned to the variable H1H2 in the vowel output file,
         c. CPP, the value in dB of the Cepstral Prominence Peak in the central part of the vowel interval, assigned to the variable CPP in the vowel output file.
 
-    9. The  VV tier is used to generate the files designated in item 4 above.
+1. The  VV tier is used to generate the files designated in item 4 above.
 
 
 
-PART B – HOW ANNOTATION SHOULD BE DONE
+**PART B – HOW ANNOTATION SHOULD BE DONE**
 
 Annotation should be done with Praat TextGrids with a mandatory chunk tier containing the intervals within which to compute the prosodic parameters described above for its tier. The symbols for the phonetic segments in the VV Tier must coincide with those indicated in the language-specific TableOfReal file. Adaptations can be done under request to P. Barbosa. The rest is done automatically by the script.
 The figure below illustrates all tiers. Their names appear in the right part of the panel. We can see that, in the Sil Tier, there are silent pauses (#) and a filled pause (i:). When segmenting these pauses, it is important to make sure that the temporal limits of the corresponding chunk tier includes all its pause intervals of the Sil Tier. In the vowel tier there is only an interval with vowel /a/, but it can have much more, any vowel from which to extract H1-H2 and CPP values. The VV Tier is the usual VV tier used for normalizing duration in the SG detector script (2006): it is the sequences of all V-V intervals of the audio file with no blank intervals in between. Labels should be in accordance with the symbols in the attached TableIPA-SGDetectorSimbols.pdf file. The Chunk Tier indicates with two labels the intervals within which the prosodic parameters in item 5 above will be computed (in the example here, trecho1 and trecho2). The Tones Tier has only two tones here and it is a point tier.
+
+See DOC Manual for a Figura of the annotation scheme.
 
 
