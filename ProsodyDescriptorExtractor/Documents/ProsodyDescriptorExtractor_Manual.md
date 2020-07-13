@@ -5,7 +5,7 @@
 
 This manual gives a general overview of how the _Prosody Descriptor Extractor Praat_ script works. Any questions can be asked directly to this email: pabarbosa.unicampbr@gmail.com. The script is documented directly thoroughly in each main section of the script file. You can have some info of what each part does by just scrolling down in the script text itself.
 
-## PART A – HOW THE SCRIPTS WORKS
+** PART A – HOW THE SCRIPTS WORKS**
 
 ### Main operations:
 
@@ -89,6 +89,6 @@ For each parameter you may keep the value as it is informed (default) or writing
 Annotation should be done with Praat TextGrids with a mandatory chunk tier containing the intervals within which to compute the prosodic parameters described above for its tier. The symbols for the phonetic segments in the VV Tier must coincide with those indicated in the language-specific TableOfReal file. Adaptations can be done under request to P. Barbosa. The rest is done automatically by the script.
 The figure below illustrates all tiers. Their names appear in the right part of the panel. We can see that, in the Sil Tier, there are silent pauses (#) and a filled pause (i:). When segmenting these pauses, it is important to make sure that the temporal limits of the corresponding chunk tier includes all its pause intervals of the Sil Tier. In the vowel tier there is only an interval with vowel /a/, but it can have much more, any vowel from which to extract H1-H2 and CPP values. The VV Tier is the usual VV tier used for normalizing duration in the SG detector script (2006): it is the sequences of all V-V intervals of the audio file with no blank intervals in between. Labels should be in accordance with the symbols in the attached TableIPA-SGDetectorSimbols.pdf file. The Chunk Tier indicates with two labels the intervals within which the prosodic parameters in item 5 above will be computed (in the example here, trecho1 and trecho2). The Tones Tier has only two tones here and it is a point tier.
 
-See DOC Manual for a Figura of the annotation scheme.
+See DOCX Manual for a Figure of the annotation scheme.
 
 
