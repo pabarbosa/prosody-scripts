@@ -3,7 +3,7 @@
 ### by Plinio A. Barbosa
 ### Versions: May 27th, 2004. New version Jul 2016
 
-**Warning:** It cannot run without the corresponding TableOfReal file for the specific language. TableOfReal files for BP, EP, German (G), French (F), American English (AmE) and Spanish (SP) are given
+**Warning:** It cannot run without the corresponding TableOfReal file for the specific language. TableOfReal files for BP, EP, German (G), French (F), British English (BE) and Spanish (SP) are given
 
 ### This Praat script generates as outputs:
 
