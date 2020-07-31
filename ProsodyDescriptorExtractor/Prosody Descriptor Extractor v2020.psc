@@ -35,20 +35,20 @@ form File acquisition
  integer VowelTier 3
  integer SilTier 4
  integer ChunkTier 2
- integer F0Thresholdleft 75
- integer F0Thresholdright 300
- positive Smthf0Thr 2
- positive F0step 0.05
- positive Window 0.03
- positive Spectralemphasisthreshold 400
+ integer left_F0Threshold 75
+ integer right_F0Threshold 300
  choice Reference: 1
    button BP
    button EP
    button G
    button F
    button BE
-   button S
+   button SP
 endform
+smthf0Thr = 2
+f0step = 0.05
+window = 0.03
+spectralemphasisthreshold = 400
 # Picks all audio files in the folder where the script is
 Create Strings as file list... list 'audiofileExtension$'
 numberOfFiles = Get number of strings
@@ -98,11 +98,11 @@ Read from file... 'audiofile$'
 # filename$ contains the name of the audio file
 filename$ = selected$("Sound")
 # F0 trace is computed, for the whole audio file
-To Pitch... 0.0 'f0Thresholdleft' 'f0Thresholdright'
+To Pitch... 0.0 'left_F0Threshold' 'right_F0Threshold'
 Smooth... 'smthf0Thr'
 ### Harmonicity
 select Sound 'filename$'
-To Harmonicity (ac)... 0.01 'f0Thresholdleft' 0.1 4.5
+To Harmonicity (ac)... 0.01 'left_F0Threshold' 0.1 4.5
 # Reads corresponding TextGrid
 arq$ = filename$ + ".TextGrid"
 Read from file... 'arq$'
@@ -423,7 +423,7 @@ for ichunk from 1 to nchunks
  sltasmedium = Get slope... 0 1000 1000 4000 energy
  sltashigh = Get slope... 0 1000 4000 8000 energy
  select Sound 'chunkfilename$'
- To Intensity... 'f0Thresholdleft' 0.0 yes
+ To Intensity... 'left_F0Threshold' 0.0 yes
  mint = Get mean... 0.0 0.0 energy
  sdint = Get standard deviation... 0 0
  cvint = 100*sdint/mint
@@ -432,7 +432,7 @@ for ichunk from 1 to nchunks
  emphasis = Get band energy difference... 0 'spectralemphasisthreshold' 0 0
 # f0 descriptors and f0 rate (tonerate) computation per chunk
  select Sound 'chunkfilename$'
- To Pitch... 0.0 'f0Thresholdleft' 'f0Thresholdright'
+ To Pitch... 0.0 'left_F0Threshold' 'right_F0Threshold'
  Smooth... 'smthf0Thr'
  if inSemitones
   f0median = Get quantile... 'initime' 'endtime' 0.5 semitones re 1 Hz
@@ -552,7 +552,7 @@ for ichunk from 1 to nchunks
  sdf0neg = sqrt(sdf0neg/(lneg-1))
 #######
  select Sound 'chunkfilename$'
- To PointProcess (periodic, cc)... 'f0Thresholdleft' 'f0Thresholdright'
+ To PointProcess (periodic, cc)... 'left_F0Threshold' 'right_F0Threshold'
  plus Sound 'chunkfilename$'
  To Ltas (only harmonics)... 50 0.0001 0.02 1.3
  lowmean = Get mean... 1.4 32 dB

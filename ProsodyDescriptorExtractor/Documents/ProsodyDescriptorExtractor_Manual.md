@@ -22,13 +22,7 @@ For each parameter you may keep the value as it is informed (default) or writing
 
     1. **Tiers' positions** (tonesTier, vVTier, vowelTier, silTier and chunkTier variables). Inform the positions where the respective tiers are in your TG file.
 
-    1. **Pitch cut-offs** (F0Thresholdleft and F0Thresholdright variables). The default values (75 and 300 Hz) are for male speakers. This is the range where the Praat F0 tracker will search for F0 values. For very expressive speech you’ll probably have to use a higher upper value. For females you should change this to the range 120 to 500 Hz. If you know the F0 range of your data, inform the limits around 10% less for the lower limit and around 10 % more for the upper limit. If you have both female and male speakers, use from 75 and 600 Hz.
-
-    1. **Smoothing degree for F0 smoothing** (Smthf0Thr variable). The default value is 2 Hz. This is to compute F0 main peaks throughout the utterances. Tests can be done beforehand with the utterances to evaluate if this is the best solution for the language.
-
-    1. **F0 first derivative step** (F0step variable). It is the temporal step, in seconds, to be used to compute F0 first derivative. We recommend do not change the default value.
-
-    1. **Spectral emphasis threshold** (spectralemphasisthreshold variable). The default value is 400 Hz for a L0 fixed band for computing spectral emphasis in Traunmüller & Eriksson (1995) terms.
+    1. **Pitch cut-offs** (left_F0Threshold and right_F0Threshold variables). The default values (75 and 300 Hz) are for male speakers. This is the range where the Praat F0 tracker will search for F0 values. For very expressive speech you’ll probably have to use a higher upper value. For females you should change this to the range 120 to 500 Hz. If you know the F0 range of your data, inform the limits around 10% less for the lower limit and around 10 % more for the upper limit. If you have both female and male speakers, use from 75 and 600 Hz.
 
     1. **Reference language** (Reference variable). Indicates the TableOfReal file corresponding to the language whose reference values for phone duration (mean and standard-deviation) need to be used to normalize raw syllable-sized duration. It is an accompany file for the script (BP.TableOfReal for Brazilian Portuguese. Please, ask the authors for tables for other languages).
 
@@ -82,7 +76,13 @@ For each parameter you may keep the value as it is informed (default) or writing
 
 1. The  VV tier is used to generate the files designated in item 4 above.
 
+Observations:
 
+For F0 smoothing we use a cut-off frequency for the smoothing filter of 2 Hz. This is used to compute F0 main peaks throughout the utterances. Tests can be done beforehand with the utterances to evaluate if this is the best solution for the language. If a different cut-off frequency needs to be used, change it by rewriting the value at the beginning of the script. (variable *smthf0Thr*).
+
+The temporal step in seconds for computing the F0 first derivative step (*F0step variable* ) is 0.05. 
+
+The frequency  threshold for computing spectral emphasis variable *(spectralemphasisthreshold* variable) was fixed at  400 Hz.
 
 **PART B – HOW ANNOTATION SHOULD BE DONE**
 
