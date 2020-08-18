@@ -118,7 +118,7 @@ arqout$ = filename$ + "dur" + ".txt"
 filedelete 'arqout$'
 arqoutstrgrp$ = filename$ + "SG" + ".txt"
 filedelete 'arqoutstrgrp$'
-fileappend 'arqout$' audiofile segment duration_ms  z filteredz  boundary 'newline$'
+fileappend 'arqout$' audiofile chunk segment duration_ms  z filteredz  boundary 'newline$'
 fileappend 'arqoutstrgrp$' audiofile stressgroupduration numberVVunits finalzfilt 'newline$'
 select TextGrid 'filename$'
 initialtime = Get starting point... 'vVTier' 2
@@ -205,6 +205,12 @@ ssyl = 0
 sdurSG = 0
 svar = 0
 for i from 1 to nselected
+ timeinchunk = Get start time of interval... 'vVTier' 'i'
+ intervalchunk = Get interval at time... 'chunkTier' 'timeinchunk'
+ chunk$ = Get label of interval... 'chunkTier' 'intervalchunk'
+ if chunk$ = ""
+  chunk$ = "no_label"
+ endif
  tempsmz = smz'i'
  tpnome$ = nome'i'$
  adv1 = i + 1
@@ -243,7 +249,7 @@ for i from 1 to nselected
  endif
  sdurSG = sdurSG + tempdur
  ssyl = ssyl + 1
- fileappend 'arqout$' 'filename$' 'tpnome$' 'tempdur:0' 'tempz:2' 'tempsmz:2' 'boundary' 'newline$'
+ fileappend 'arqout$' 'filename$' 'chunk$' 'tpnome$' 'tempdur:0' 'tempz:2' 'tempsmz:2' 'boundary' 'newline$'
  if boundary == 1
   fileappend 'arqoutstrgrp$' 'filename$' 'sdurSG:0' 'ssyl' 'tempz:2' 'newline$'
    durSG'kk' = sdurSG

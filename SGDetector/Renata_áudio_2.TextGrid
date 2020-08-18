@@ -1,0 +1,202 @@
+File type = "ooTextFile"
+Object class = "TextGrid"
+
+xmin = 0 
+xmax = 8.4 
+tiers? <exists> 
+size = 1 
+item []: 
+    item [1]:
+        class = "IntervalTier" 
+        name = "V-V" 
+        xmin = 0 
+        xmax = 8.4 
+        intervals: size = 47 
+        intervals [1]:
+            xmin = 0 
+            xmax = 0.0045949544264120646 
+            text = "" 
+        intervals [2]:
+            xmin = 0.0045949544264120646 
+            xmax = 0.20656129492916522 
+            text = "eN" 
+        intervals [3]:
+            xmin = 0.20656129492916522 
+            xmax = 0.42959788171365604 
+            text = "otR" 
+        intervals [4]:
+            xmin = 0.42959788171365604 
+            xmax = 0.5400356597559944 
+            text = "in" 
+        intervals [5]:
+            xmin = 0.5400356597559944 
+            xmax = 0.7271606164450026 
+            text = "iS" 
+        intervals [6]:
+            xmin = 0.7271606164450026 
+            xmax = 0.9921707609561249 
+            text = "IAt" 
+        intervals [7]:
+            xmin = 0.9921707609561249 
+            xmax = 1.12461287218371 
+            text = "iv" 
+        intervals [8]:
+            xmin = 1.12461287218371 
+            xmax = 1.320821564634321 
+            text = "ApR" 
+        intervals [9]:
+            xmin = 1.320821564634321 
+            xmax = 1.4718326041151875 
+            text = "am" 
+        intervals [10]:
+            xmin = 1.4718326041151875 
+            xmax = 1.5498444722898819 
+            text = "en" 
+        intervals [11]:
+            xmin = 1.5498444722898819 
+            xmax = 1.7527278262376256 
+            text = "iz" 
+        intervals [12]:
+            xmin = 1.7527278262376256 
+            xmax = 1.9121182556618226 
+            text = "aR" 
+        intervals [13]:
+            xmin = 1.9121182556618226 
+            xmax = 2.044757977423319 
+            text = "uS" 
+        intervals [14]:
+            xmin = 2.044757977423319 
+            xmax = 2.2362532665994106 
+            text = "ef" 
+        intervals [15]:
+            xmin = 2.2362532665994106 
+            xmax = 2.3823307983952846 
+            text = "eIt" 
+        intervals [16]:
+            xmin = 2.3823307983952846 
+            xmax = 2.502302681561581 
+            text = "Uz" 
+        intervals [17]:
+            xmin = 2.502302681561581 
+            xmax = 2.653033166899651 
+            text = "ek" 
+        intervals [18]:
+            xmin = 2.653033166899651 
+            xmax = 2.7956168673711828 
+            text = "on" 
+        intervals [19]:
+            xmin = 2.7956168673711828 
+            xmax = 2.9585137518239937 
+            text = "om" 
+        intervals [20]:
+            xmin = 2.9585137518239937 
+            xmax = 3.1119180409756946 
+            text = "ik" 
+        intervals [21]:
+            xmin = 3.1119180409756946 
+            xmax = 3.270150247947179 
+            text = "USd" 
+        intervals [22]:
+            xmin = 3.270150247947179 
+            xmax = 3.448432747438011 
+            text = "ap" 
+        intervals [23]:
+            xmin = 3.448432747438011 
+            xmax = 3.6078984803422816 
+            text = "ANd" 
+        intervals [24]:
+            xmin = 3.6078984803422816 
+            xmax = 3.7912970365233667 
+            text = "em" 
+        intervals [25]:
+            xmin = 3.7912970365233667 
+            xmax = 4.2502759351001345 
+            text = "iAUg" 
+        intervals [26]:
+            xmin = 4.2502759351001345 
+            xmax = 4.402289998242524 
+            text = "ov" 
+        intervals [27]:
+            xmin = 4.402289998242524 
+            xmax = 4.550233491300038 
+            text = "eRn" 
+        intervals [28]:
+            xmin = 4.550233491300038 
+            xmax = 4.780490086942187 
+            text = "aUt" 
+        intervals [29]:
+            xmin = 4.780490086942187 
+            xmax = 4.882884822571088 
+            text = "oR" 
+        intervals [30]:
+            xmin = 4.882884822571088 
+            xmax = 5.072564206557071 
+            text = "iz" 
+        intervals [31]:
+            xmin = 5.072564206557071 
+            xmax = 5.423788120099364 
+            text = "oUn" 
+        intervals [32]:
+            xmin = 5.423788120099364 
+            xmax = 5.697126421304549 
+            text = "ov" 
+        intervals [33]:
+            xmin = 5.697126421304549 
+            xmax = 5.960909443232826 
+            text = "uS" 
+        intervals [34]:
+            xmin = 5.960909443232826 
+            xmax = 6.246176499499365 
+            text = "ak" 
+        intervals [35]:
+            xmin = 6.246176499499365 
+            xmax = 6.430689766523562 
+            text = "iSd" 
+        intervals [36]:
+            xmin = 6.430689766523562 
+            xmax = 6.6507708325186625 
+            text = "uf" 
+        intervals [37]:
+            xmin = 6.6507708325186625 
+            xmax = 6.825384089262016 
+            text = "uNd" 
+        intervals [38]:
+            xmin = 6.825384089262016 
+            xmax = 6.929707465928361 
+            text = "Ud" 
+        intervals [39]:
+            xmin = 6.929707465928361 
+            xmax = 7.030818171133356 
+            text = "ig" 
+        intervals [40]:
+            xmin = 7.030818171133356 
+            xmax = 7.12768987803782 
+            text = "aR" 
+        intervals [41]:
+            xmin = 7.12768987803782 
+            xmax = 7.355529473685925 
+            text = "aNt" 
+        intervals [42]:
+            xmin = 7.355529473685925 
+            xmax = 7.544056718661535 
+            text = "IAd" 
+        intervals [43]:
+            xmin = 7.544056718661535 
+            xmax = 7.682475828747469 
+            text = "ut" 
+        intervals [44]:
+            xmin = 7.682475828747469 
+            xmax = 7.851628732342187 
+            text = "eNp" 
+        intervals [45]:
+            xmin = 7.851628732342187 
+            xmax = 8.048697101103794 
+            text = "UdS" 
+        intervals [46]:
+            xmin = 8.048697101103794 
+            xmax = 8.23945984627125 
+            text = "eRv" 
+        intervals [47]:
+            xmin = 8.23945984627125 
+            xmax = 8.4 
+            text = "" 
