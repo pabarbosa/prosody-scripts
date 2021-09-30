@@ -73,12 +73,16 @@ For each parameter you may keep the value as it is informed (default) or writing
         a. Vowel segment, the label of the vowel of each interval, assigned to the variable vowel in the vowel output file,
         b. H1- H2, the value in dB of the difference between harmonics H1 and H2 in the central part of the vowel interval, assigned to the variable H1H2 in the vowel output file,
         c. CPP, the value in dB of the Cepstral Prominence Peak in the central part of the vowel interval, assigned to the variable CPP in the vowel output file.
+        d. dur, duration of the vowel
+        e. F0 median in the vowel in Hz
+        f. F0 standard-deviation in the vowel in Hz
+        g. F0 baseline in the vowel in Hz
 
 1. The  VV tier is used to generate the files designated in item 4 above.
 
 Observations:
 
-For F0 smoothing we use a cut-off frequency for the smoothing filter of 2 Hz. This is used to compute F0 main peaks throughout the utterances. Tests can be done beforehand with the utterances to evaluate if this is the best solution for the language. If a different cut-off frequency needs to be used, change it by rewriting the value at the beginning of the script. (variable *smthf0Thr*).
+For F0 smoothing we use a cut-off frequency for the smoothing filter of 5 Hz. This is used to compute F0 main peaks throughout the utterances. Tests can be done beforehand with the utterances to evaluate if this is the best solution for the language. If a different cut-off frequency needs to be used, change it by rewriting the value at the beginning of the script. (variable *smthf0Thr*).
 
 The temporal step in seconds for computing the F0 first derivative step (*F0step variable* ) is 0.05. 
 

@@ -18,7 +18,7 @@
 # 
 #  New fonctionalities
 #
-# Date: 2012, 2015, new version (3.0): Jun 2020.
+# Date: 2012, 2015, new version (3.1): Sept 2021.
 form File acquisition
  word FileOutPar OutPutProsParameters.txt
  word FileOutSil OutPutSil.txt
@@ -45,7 +45,7 @@ form File acquisition
    button BE
    button SP
 endform
-smthf0Thr = 2
+smthf0Thr = 5
 f0step = 0.05
 window = 0.03
 spectralemphasisthreshold = 400
@@ -59,21 +59,21 @@ filedelete 'fileOutPar$'
 # Creates the header of the mandatory output file (includes speech and articulation rate if there is a VV tier).
 if hasVVTier
  if hasSilTier
-   fileappend 'fileOutPar$' audiofile chunk f0med f0sd f0SAQ f0min f0max sdf0peak f0peakwidth f0peak_rate sdtf0peak df0posmean df0negmean df0sdpos df0sdneg emph cvint slLTASmed slLTAShigh hnr SPI shimmer jitter sr ar 'newline$'
+   fileappend 'fileOutPar$' audiofile chunk f0med f0sd f0SAQ f0min f0max f0base sdf0peak f0peakwidth f0peak_rate sdtf0peak df0posmean df0negmean df0sdpos df0sdneg emph cvint slLTASmed slLTAShigh hnr SPI shimmer jitter sr ar 'newline$'
  else
-  fileappend 'fileOutPar$' audiofile chunk f0med f0sd f0SAQ f0min f0max sdf0peak f0peakwidth f0peak_rate sdtf0peak df0posmean df0negmean df0sdpos df0sdneg emph cvint slLTASmed slLTAShigh  hnr SPI shimmer jitter sr 'newline$'
+  fileappend 'fileOutPar$' audiofile chunk f0med f0sd f0SAQ f0min f0max f0base sdf0peak f0peakwidth f0peak_rate sdtf0peak df0posmean df0negmean df0sdpos df0sdneg emph cvint slLTASmed slLTAShigh  hnr SPI shimmer jitter sr 'newline$'
 endif
 # Reads the reference file with the triplets (segment, mean, standard-deviation) from the 
 # reference speaker. The variable nseg contains the total number of segments in the file
  Read from file... 'reference$'.TableOfReal
  nseg = Get number of rows
 else
- fileappend 'fileOutPar$' audiofile chunk f0med f0sd f0SAQ f0min f0max sdf0peak f0peakwidth f0peak_rate sdtf0peak df0posmean df0negmean df0sdpos df0sdneg emph cvint slLTASmed slLTAShigh  hnr SPI shimmer jitter 'newline$'
+ fileappend 'fileOutPar$' audiofile chunk f0med f0sd f0SAQ f0min f0max f0base sdf0peak f0peakwidth f0peak_rate sdtf0peak df0posmean df0negmean df0sdpos df0sdneg emph cvint slLTASmed slLTAShigh  hnr SPI shimmer jitter 'newline$'
 endif
 # Creates the header of the output file with VQ parameters for vowels
 if hasVowelTier
 filedelete 'fileOutEff$'
-fileappend 'fileOutEff$' audiofile excerpt vowel H1H2 CPP 'newline$'
+fileappend 'fileOutEff$' audiofile excerpt vowel H1H2 CPP dur f0med_Hz f0sd_Hz f0base_Hz 'newline$'
 endif
 # Creates the header of the output file for tones
 if hasTonesTier
@@ -379,15 +379,20 @@ ndesignatedvowels = Get number of intervals... 'vowelTier'
 for i from 2 to ndesignatedvowels - 1
  select TextGrid 'filename$'
   label'i'$ = Get label of interval... 'vowelTier' 'i'
-  if label'i'$ = "a" or label'i'$ = "A" or label'i'$ = "eh" or label'i'$ = "oh"
+  firstseg$ = mid$(label'i'$,1,1)
+  call isvowel 'firstseg$'
+  if truevowel or label'i'$ = "V"
    vowel$ = label'i'$
    tini = Get start point... 'vowelTier' 'i'
    tfin = Get end point... 'vowelTier' 'i'
+   durV = 1000*(tfin - tini)
    tmean = (tini+tfin)/2
    timeinchunk = Get interval at time... 'chunkTier' 'tmean'
    chunk$ = Get label of interval... 'chunkTier' 'timeinchunk'
    select Pitch 'filename$'
    f0median = Get quantile... 'tini' 'tfin' 0.5 Hertz
+   f0sd = Get standard deviation... 'tini' 'tfin' Hertz
+   f0base = f0median - 1.43*f0sd
    tleft = tmean - 'window'/2
    tright = tmean + 'window'/2
    select Sound 'filename$'
@@ -405,7 +410,7 @@ for i from 2 to ndesignatedvowels - 1
    f0max = f0median*2.5
    h2 = Get maximum... 'f0min' 'f0max' None
    h1h2 = h1-h2
-   fileappend 'fileOutEff$' 'filename$' 'chunk$' 'vowel$' 'h1h2:2' 'cpp:2' 'newline$'
+   fileappend 'fileOutEff$' 'filename$' 'chunk$' 'vowel$' 'h1h2:2' 'cpp:2' 'durV:0' 'f0median:0' 'f0sd:0' 'f0base:0''newline$'
   endif
 endfor
 endif
@@ -445,6 +450,7 @@ for ichunk from 1 to nchunks
   f0sd = Get standard deviation... 'initime' 'endtime' semitones
   f0min = Get quantile... 'initime' 'endtime' 0.01 semitones re 1 Hz
   f0max = Get quantile... 'initime' 'endtime' 0.99 semitones re 1 Hz
+  f0base = f0median - 1.43*f0sd
   f01Q = Get quantile... 'initime' 'endtime' 0.25 semitones re 1 Hz
   f03Q = Get quantile... 'initime' 'endtime' 0.75 semitones re 1 Hz
   f0SAQ = (f03Q-f01Q)/2
@@ -453,6 +459,7 @@ for ichunk from 1 to nchunks
   f0sd = Get standard deviation... 'initime' 'endtime' Hertz
   f0min = Get quantile... 'initime' 'endtime' 0.01 Hertz
   f0max = Get quantile... 'initime' 'endtime' 0.99 Hertz
+  f0base = f0median - 1.43*f0sd
   f01Q = Get quantile... 'initime' 'endtime' 0.25 Hertz
   f03Q = Get quantile... 'initime' 'endtime' 0.75 Hertz
   f0SAQ = (f03Q-f01Q)/2
@@ -603,12 +610,12 @@ if hasVVTier & hasSilTier
  artrate = nVV/(endtime-initime-sdursil)
 endif
 if !hasVVTier
-fileappend 'fileOutPar$' 'filename$' 'uttlabel$' 'f0median:0' 'f0sd:2' 'f0SAQ:2' 'f0min:0' 'f0max:0' 'sdf0max:1' 'meandrop:1' 'tonerate:2' 'sdpitch:2' 'meandf0pos:2' 'meandf0neg:2' 'sdf0pos:2' 'sdf0neg:2' 'emphasis:1' 'cvint:0' 'sltasmedium:1' 'sltashigh:1' 'hnr:1' 'sPI:1' 'shimmer:1' 'jitter:1' 'newline$'
+fileappend 'fileOutPar$' 'filename$' 'uttlabel$' 'f0median:0' 'f0sd:2' 'f0SAQ:2' 'f0min:0' 'f0max:0' 'f0base:0' 'sdf0max:1' 'meandrop:1' 'tonerate:2' 'sdpitch:2' 'meandf0pos:2' 'meandf0neg:2' 'sdf0pos:2' 'sdf0neg:2' 'emphasis:1' 'cvint:0' 'sltasmedium:1' 'sltashigh:1' 'hnr:1' 'sPI:1' 'shimmer:1' 'jitter:1' 'newline$'
 else
  if hasSilTier
-  fileappend 'fileOutPar$' 'filename$' 'uttlabel$' 'f0median:0' 'f0sd:2' 'f0SAQ:2' 'f0min:0' 'f0max:0' 'sdf0max:1' 'meandrop:1' 'tonerate:2' 'sdpitch:2' 'meandf0pos:2' 'meandf0neg:2' 'sdf0pos:2' 'sdf0neg:2' 'emphasis:1' 'cvint:0' 'sltasmedium:1' 'sltashigh:1' 'hnr:1' 'sPI:1' 'shimmer:1' 'jitter:1' 'srate:1' 'artrate:1' 'newline$'
+  fileappend 'fileOutPar$' 'filename$' 'uttlabel$' 'f0median:0' 'f0sd:2' 'f0SAQ:2' 'f0min:0' 'f0max:0' 'f0base:0' 'sdf0max:1' 'meandrop:1' 'tonerate:2' 'sdpitch:2' 'meandf0pos:2' 'meandf0neg:2' 'sdf0pos:2' 'sdf0neg:2' 'emphasis:1' 'cvint:0' 'sltasmedium:1' 'sltashigh:1' 'hnr:1' 'sPI:1' 'shimmer:1' 'jitter:1' 'srate:1' 'artrate:1' 'newline$'
  else
-  fileappend 'fileOutPar$' 'filename$' 'uttlabel$' 'f0median:0' 'f0sd:2' 'f0SAQ:2' 'f0min:0'  'f0max:0' 'sdf0max:1' 'meandrop:1' 'tonerate:2' 'sdpitch:2' 'meandf0pos:2' 'meandf0neg:2' 'sdf0pos:2' 'sdf0neg:2' 'emphasis:1' 'cvint:0' 'sltasmedium:1' 'sltashigh:1' 'hnr:1' 'sPI:1' 'shimmer:1' 'jitter:1' 'srate:1' 'newline$'
+  fileappend 'fileOutPar$' 'filename$' 'uttlabel$' 'f0median:0' 'f0sd:2' 'f0SAQ:2' 'f0min:0'  'f0max:0' 'f0base:0' 'sdf0max:1' 'meandrop:1' 'tonerate:2' 'sdpitch:2' 'meandf0pos:2' 'meandf0neg:2' 'sdf0pos:2' 'sdf0neg:2' 'emphasis:1' 'cvint:0' 'sltasmedium:1' 'sltashigh:1' 'hnr:1' 'sPI:1' 'shimmer:1' 'jitter:1' 'srate:1' 'newline$'
  endif
 endif
 endif
@@ -633,7 +640,7 @@ procedure zscorecomp nome$ dur tint
          seg$ = seg$ + mid$(nome$,cpt+1,1)
       endif
       if (cpt+nb <= sizeunit)
-       tp$ = mid$(nome$,cpt,1)
+       tp$ = mid$(nome$,1,1)
        call isvowel 'tp$'
        if ((mid$(nome$,cpt+nb,1) = "I")  or  (mid$(nome$,cpt+nb,1)  = "U"))  and truevowel
          seg$ = seg$ + mid$(nome$,cpt+nb,1)
