@@ -1,7 +1,7 @@
 ## Manual of the Praat Script
 # Prosody Descriptor Extractor
-### by Plinio A. Barbosa (2014, 2020)
-### Version: May 2020
+### by Plinio A. Barbosa (2014, 2020, 2021)
+### Version: October 2021
 
 This manual gives a general overview of how the _Prosody Descriptor Extractor Praat_ script works. Any questions can be asked directly to this email: pabarbosa.unicampbr@gmail.com. The script is documented directly thoroughly in each main section of the script file. You can have some info of what each part does by just scrolling down in the script text itself.
 
