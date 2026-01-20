@@ -1,0 +1,62 @@
+# BreathingParametersExtractor.psc
+# Script implemented by Plinio A. Barbosa (IEL/Univ. of Campinas, Brazil) for computing
+# breathing descriptors from coupled audio/TG files 
+#
+# Copyright (C) 2021, 2025 Barbosa, P. A.
+#
+#
+#    This program is free software; you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation; version 2 of the License.
+#    This program is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+form Input Parameters
+word FileOut ChestBreathing.txt
+word AudiofileExtension *.wav
+integer Channel 4
+integer ChestTier 6
+endform
+Create Strings as file list... list 'audiofileExtension$'
+numberOfFiles = Get number of strings
+if !numberOfFiles
+	exit There are no sound files in the folder!
+endif
+filedelete 'fileOut$'
+fileappend 'fileOut$' subj group cond text sex phasechest duration inhamp vinh 'newline$'
+for ifile from 1 to numberOfFiles
+ select Strings list
+ audiofile$ = Get string... ifile
+ Read from file... 'audiofile$'
+ filename$ = selected$("Sound")
+ cond$ = left$(filename$,3)
+ text$ = left$(filename$,4) 
+ subj$ = mid$(filename$,6,2) 
+ sex$ =  mid$(filename$,9,1) 
+ group$ = mid$(filename$,10,2) 
+ fileTG$ = filename$ + ".TextGrid"
+ Read from file... 'fileTG$'
+  nintervals = Get number of intervals... 'chestTier'
+  for i from 2 to nintervals - 1
+   label$ = Get label of interval... 'chestTier' 'i'
+   tini = Get starting point... 'chestTier' 'i'
+   tfin = Get end point... 'chestTier' 'i'
+   dur = round(('tfin'-'tini')*1000)
+   if label$ == "inh"
+    select Sound 'filename$'
+    inhampmax = Get value at time... 'channel' 'tfin' linear
+    inhampmin = Get value at time... 'channel' 'tini' linear
+    inhamp = round(('inhampmax' - 'inhampmin')*1000)
+    vinh = inhamp /dur
+   else
+     inhamp = undefined
+     vinh = undefined
+   endif
+   select TextGrid 'filename$'
+   if label$ <> ""
+    fileappend 'fileOut$' 'subj$' 'group$' 'cond$'  'text$'  'sex$'  'label$' 'dur:0' 'inhamp:0' 'vinh:3' 'newline$'
+   endif
+endfor
+endfor
+
